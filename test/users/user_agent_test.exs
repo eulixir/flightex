@@ -1,9 +1,9 @@
 defmodule Flightex.Users.AgentTest do
   use ExUnit.Case
 
-  alias Flightex.Users.Agent, as: UserAgent
-
   import Flightex.Factory
+
+  alias Flightex.Users.Agent, as: UserAgent
 
   describe "save/1" do
     test "save the users" do
@@ -45,11 +45,9 @@ defmodule Flightex.Users.AgentTest do
 
       response = UserAgent.get("banana")
 
-      expected_response =
-        {:error, "User not found"}
+      expected_response = {:error, "User not found"}
 
       assert response == expected_response
     end
-
   end
 end
