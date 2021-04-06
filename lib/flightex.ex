@@ -1,5 +1,4 @@
 defmodule Flightex do
-
   alias Flightex.Users.Agent, as: UserAgent
   alias Flightex.Users.CreateOrUpdate, as: CreateOrUpdateUser
 

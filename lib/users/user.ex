@@ -5,12 +5,12 @@ defmodule Flightex.Users.User do
 
   def build(name, email, cpf) when is_bitstring(cpf) do
     {:ok,
-    %__MODULE__{
-      id: UUID.uuid4(),
-      name: name,
-      email: email,
-      cpf: cpf
-    }}
+     %__MODULE__{
+       id: UUID.uuid4(),
+       name: name,
+       email: email,
+       cpf: cpf
+     }}
   end
 
   def build(_name, _email, cpf) when is_integer(cpf),
