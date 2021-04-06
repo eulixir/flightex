@@ -11,8 +11,7 @@ defmodule Flightex.Users.User do
        email: email,
        cpf: cpf
      }}
-
-     end
+  end
 
   def build(_name, _email, cpf) when is_integer(cpf),
     do: {:error, "Cpf must be a String"}

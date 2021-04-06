@@ -1,8 +1,6 @@
 defmodule Flightex.Users.CreateOrUpdateTest do
   use ExUnit.Case
 
-  # import Flightex.Factory
-
   alias Flightex.Users.{CreateOrUpdate, Agent}
 
   describe "call/1" do
@@ -16,7 +14,7 @@ defmodule Flightex.Users.CreateOrUpdateTest do
       params = %{
         name: "Jp",
         email: "jp@banana.com",
-        cpf: "12345678900",
+        cpf: "12345678900"
       }
 
       expected_response = :ok
@@ -30,7 +28,7 @@ defmodule Flightex.Users.CreateOrUpdateTest do
       params = %{
         name: "Jp",
         email: "jp@banana.com",
-        cpf: 12345678900,
+        cpf: 12_345_678_900
       }
 
       expected_response = {:error, "Cpf must be a String"}
