@@ -12,6 +12,7 @@ defmodule Flightex.Bookings.Booking do
       local_destination: local_destination,
       user_id: user_id,
     }}
+
   end
 
 
