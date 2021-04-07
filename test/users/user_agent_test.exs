@@ -6,10 +6,14 @@ defmodule Flightex.Users.AgentTest do
   alias Flightex.Users.Agent, as: UserAgent
 
   describe "save/1" do
+    setup do
+      UserAgent.start_link(%{})
+
+      :ok
+    end
+
     test "save the users" do
       user = build(:users)
-
-      UserAgent.start_link(%{})
 
       assert UserAgent.save(user) == :ok
     end

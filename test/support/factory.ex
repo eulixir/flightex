@@ -15,7 +15,7 @@ defmodule Flightex.Factory do
 
   def booking_factory do
     %Booking{
-      complete_date: [2001, 5, 7, 3, 5, 0],
+      complete_date: {:ok, ~N[2001-05-07 03:05:00]},
       local_origin: "Brasilia",
       local_destination: "Bananeiras",
       user_id: "12345678900",

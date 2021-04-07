@@ -13,6 +13,4 @@ defmodule Flightex do
   defdelegate create_or_update_user(params), to: CreateOrUpdateUser, as: :call
 
   defdelegate create_or_update_booking(params), to: CreateOrUpdateBookings, as: :call
-
-  # Flightex.create_or_update_booking(%{complete_date: [2001, 5, 7, 3, 5, 0], local_origin: "Brasilia", local_destination: "Bananeiras", user_id: "201921613"})
 end

@@ -1,7 +1,5 @@
 defmodule Flightex.Bookings.BookingTest do
-  use ExUnit.Case
-
-  import Flightex.Factory
+  use ExUnit.Case, async: false
 
   alias Flightex.Bookings.Booking
 
@@ -9,7 +7,7 @@ defmodule Flightex.Bookings.BookingTest do
     test "when all params are valid, returns a booking" do
       response =
         Booking.build(
-          [2001, 5, 7, 1, 46, 20],
+          {:ok, ~N[2001-05-07 01:46:20]},
           "Brasilia",
           "ilha das bananas",
           "12345678900"
@@ -33,7 +31,7 @@ defmodule Flightex.Bookings.BookingTest do
     test "when have 3 params, returns an error" do
       response =
         Booking.build(
-          [2001, 5, 7, 1, 46, 20],
+          {:ok, ~N[2001-05-07 01:46:20]},
           "Brasilia",
           "ilha das bananas"
         )

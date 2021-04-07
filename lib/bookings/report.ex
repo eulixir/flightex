@@ -6,13 +6,13 @@ defmodule Flightex.Bookings.Report do
     booking_list = build_booking_list()
 
     File.write(filename, booking_list)
+    {:ok, "Report created"}
   end
 
   defp build_booking_list() do
     BookingAgent.list_all_bookings()
     |> Map.values()
     |> Enum.map(&booking_string(&1))
-    |> IO.inspect()
   end
 
   defp booking_string(%Booking{
